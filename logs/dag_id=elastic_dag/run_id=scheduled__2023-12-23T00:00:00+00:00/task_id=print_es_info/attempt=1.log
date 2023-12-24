@@ -1,0 +1,34 @@
+[2023-12-24T14:49:25.724+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: elastic_dag.print_es_info scheduled__2023-12-23T00:00:00+00:00 [queued]>
+[2023-12-24T14:49:25.730+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: elastic_dag.print_es_info scheduled__2023-12-23T00:00:00+00:00 [queued]>
+[2023-12-24T14:49:25.731+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-24T14:49:25.731+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-12-24T14:49:25.731+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-24T14:49:25.739+0000] {taskinstance.py:1383} INFO - Executing <Task(PythonOperator): print_es_info> on 2023-12-23 00:00:00+00:00
+[2023-12-24T14:49:25.744+0000] {standard_task_runner.py:55} INFO - Started process 326 to run task
+[2023-12-24T14:49:25.748+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'elastic_dag', 'print_es_info', 'scheduled__2023-12-23T00:00:00+00:00', '--job-id', '184', '--raw', '--subdir', 'DAGS_FOLDER/elastic_dag.py', '--cfg-path', '/tmp/tmpnc9sut9a']
+[2023-12-24T14:49:25.751+0000] {standard_task_runner.py:83} INFO - Job 184: Subtask print_es_info
+[2023-12-24T14:49:25.823+0000] {task_command.py:376} INFO - Running <TaskInstance: elastic_dag.print_es_info scheduled__2023-12-23T00:00:00+00:00 [running]> on host b5bd61ab1ebf
+[2023-12-24T14:49:25.902+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=elastic_dag
+AIRFLOW_CTX_TASK_ID=print_es_info
+AIRFLOW_CTX_EXECUTION_DATE=2023-12-23T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-12-23T00:00:00+00:00
+[2023-12-24T14:49:25.903+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 193, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/elastic_dag.py", line 9, in _print_es_info
+    hook.info()
+  File "/opt/airflow/plugins/hooks/elastic/elastic_hook.py", line 27, in info
+    return self.es.info()
+AttributeError: 'ElasticHook' object has no attribute 'es'
+[2023-12-24T14:49:25.912+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=elastic_dag, task_id=print_es_info, execution_date=20231223T000000, start_date=20231224T144925, end_date=20231224T144925
+[2023-12-24T14:49:25.922+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 184 for task print_es_info ('ElasticHook' object has no attribute 'es'; 326)
+[2023-12-24T14:49:25.962+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-12-24T14:49:25.975+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

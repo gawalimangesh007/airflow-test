@@ -1,0 +1,25 @@
+[2023-12-22T18:26:15.556+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: example_branch_operator.branching scheduled__2023-12-21T00:00:00+00:00 [queued]>
+[2023-12-22T18:26:15.562+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: example_branch_operator.branching scheduled__2023-12-21T00:00:00+00:00 [queued]>
+[2023-12-22T18:26:15.562+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-22T18:26:15.562+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-12-22T18:26:15.562+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-22T18:26:15.570+0000] {taskinstance.py:1383} INFO - Executing <Task(BranchPythonOperator): branching> on 2023-12-21 00:00:00+00:00
+[2023-12-22T18:26:15.572+0000] {standard_task_runner.py:55} INFO - Started process 6147 to run task
+[2023-12-22T18:26:15.575+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'example_branch_operator', 'branching', 'scheduled__2023-12-21T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', '/home/***/.local/lib/python3.7/site-packages/***/example_dags/example_branch_operator.py', '--cfg-path', '/tmp/tmpl7t9_ttw']
+[2023-12-22T18:26:15.575+0000] {standard_task_runner.py:83} INFO - Job 9: Subtask branching
+[2023-12-22T18:26:15.609+0000] {task_command.py:376} INFO - Running <TaskInstance: example_branch_operator.branching scheduled__2023-12-21T00:00:00+00:00 [running]> on host 29c739d23fae
+[2023-12-22T18:26:15.645+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=example_branch_operator
+AIRFLOW_CTX_TASK_ID=branching
+AIRFLOW_CTX_EXECUTION_DATE=2023-12-21T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-12-21T00:00:00+00:00
+[2023-12-22T18:26:15.646+0000] {python.py:177} INFO - Done. Returned value was: branch_d
+[2023-12-22T18:26:15.646+0000] {skipmixin.py:155} INFO - Following branch branch_d
+[2023-12-22T18:26:15.646+0000] {skipmixin.py:190} INFO - Skipping tasks ['branch_c', 'branch_a', 'branch_b']
+[2023-12-22T18:26:15.669+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=example_branch_operator, task_id=branching, execution_date=20231221T000000, start_date=20231222T182615, end_date=20231222T182615
+[2023-12-22T18:26:15.709+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-12-22T18:26:15.736+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

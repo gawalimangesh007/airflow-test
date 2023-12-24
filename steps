@@ -1,0 +1,3 @@
+start docker desktop app and then run below commands
+docker-compose up -d
+docker-compose ps
